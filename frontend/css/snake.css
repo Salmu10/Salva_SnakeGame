@@ -1,0 +1,351 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#container {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arcade Rounded';
+    color: black;
+}
+
+#container.visible {
+    display: flex;
+}
+
+#page {
+    display: none;
+    flex-direction: column;
+    background: url("../img/bg.jpg"); 
+    min-height: 100vh;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+}
+
+#page.visible {
+    display: flex;
+}
+
+#user, #score, #high_score {
+    display: block;
+    padding: 5px;
+    margin-bottom: 5px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#img_user {
+    display: inline-block;
+    width: 20%;
+    margin-left: -20px;
+}
+
+#player {
+    display: inline-block;
+}
+
+#board {
+    display: grid;
+    width: 60vmin;
+    height: 62vmin;
+    border: 2px solid black;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+}
+
+#ranking {
+    display: block;
+    position: absolute;
+    left: 3%;
+    top: 5%;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#listranking {
+    list-style-type: none;
+    font-size: 18px;
+}
+
+#listranking li{
+    margin-top: 15px;
+}
+
+#settings {
+    display: block;
+    position: absolute;
+    text-align: center;
+    right: 5%;
+    top: 5%;
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    background-color: #333;
+    color: white;
+}
+
+#settings i {
+    display: block;
+    margin: auto;
+    padding: 25px;
+    color: white;
+}
+
+#custom_settings {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("../img/fondo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+}
+
+#custom_settings.visible {
+    display: flex;
+}
+
+.modal_settings {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    overflow-wrap: break-word;
+    text-align: justify;
+    width: 50%;
+    height: 400px;
+    padding: 0; 
+    margin: auto;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.modal_settings h2 {
+    color: black;
+    text-align: center;
+    font-family: 'Arcade Rounded';
+    font-size: 25px;
+    padding: 15px;
+    margin-top: 2%;
+}
+
+.modal_settings button {
+    align-content: center;
+    background: white;
+    padding: 10px;
+}
+     
+.modal_settings .done, .modal_settings .home {
+    align-content: center;
+    color: black;
+    background: white;
+    border: 0;
+    font-family: 'Arcade Rounded';
+    font-size: 15px;
+    margin-bottom: 25px;
+    border: 3px solid #333;
+    border-radius: 20px;
+    width: 200px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/* Selects styles */
+
+    .selectors {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        width: 70%;
+        margin: auto;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .selectors label {
+        font-size: 15px;
+        font-family: 'Arcade Rounded';
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    #custom_select select{
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+    #custom_select select::-ms-expand {
+        display: none;
+    }
+
+    #custom_select{
+        max-width: 250px;
+        position: relative;
+        margin: auto;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+    
+    #custom_select select{
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        padding: 7px 10px;
+        height: 35px;
+        outline: 0; 
+        border: 0;
+        border-radius: 0;
+        background: #f0f0f0;
+        font-size: 12px;
+        color: #333;
+        font-family: 'Arcade Rounded';
+        border: 2px solid #333;
+        border-radius: 12px;
+        position: relative;
+        transition: all 0.25s ease;
+    }
+    
+    #custom_select i{
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: calc(50% - 10px);
+        width: 8px;
+        height: 8px;
+        border-left: 4px solid #333;
+        border-bottom: 4px solid #333;
+        transform: rotate(-45deg); 
+        transition: all 0.25s ease;
+    }
+    
+    #custom_select:hover i{
+        margin-top: 3px;
+    }
+
+/* Snake */
+
+    .head {
+        border: 2px solid black; 
+        transform: scale(1.02);
+        border-radius: 9px;
+    }
+
+    .snake {
+        border: 1px solid black;
+        border-radius: 11px;
+        opacity: 0.7;
+    }
+
+    .food {
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .wall {
+        background-image: url(../img/wall.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+.game-over {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("../img/fondo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+}
+
+.game-over.visible {
+    display: flex;
+}
+
+.modal {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    overflow-wrap: break-word;
+    text-align: justify;
+    width: 50%;
+    height: 400px;
+    padding: 0; 
+    margin: auto;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.modal h2 {
+    color: black;
+    text-align: center;
+    font-family: 'Arcade Rounded';
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.modal p {
+    margin-top: 10px;
+    font-family: 'Arcade Rounded';
+    font-size: 23px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+button {
+    cursor: pointer;
+    background: white;
+    border: 0;
+    padding: 0; 
+    border-radius: 20px;
+    color: #333;  
+    font-family: 'Arcade Rounded';
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 1;
+    transition: 0.3s;
+}
+
+button:hover, button:focus {
+    background-color: rgb(201, 194, 194);
+    outline: 0;
+}
+
+.modal button {
+    align-content: center;
+    background: white;
+    padding: 10px;
+}
+     
+.modal .reiniciar {
+    align-content: center;
+    color: black;
+    background: white;
+    border: 0;
+    font-family: 'Arcade Rounded';
+    font-size: 18px;
+    margin-bottom: 25px;
+    border: 5px solid #333;
+    border-radius: 20px;
+    width: 300px;
+}
+
+.reiniciar:hover, .reiniciar:focus {
+    background-color: rgb(201, 194, 194);
+    outline: 0;
+}

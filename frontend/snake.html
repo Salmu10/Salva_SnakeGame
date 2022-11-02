@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="css/snake.css">
+    <title>Snake Salva</title>
+    <script src="js/controller_user.js"></script>
+    <script src="js/controller_snake.js"></script>
+
+</head>
+<body>
+
+    <div class="container" id="container">
+        <div id="page">
+            <div id="user">
+                <img id="img_user">
+                <div id="player"></div>
+            </div>
+            <div id="score">Score: 0</div>
+            <div id="high_score">Highscore: 0</div>
+            <div id="board"></div>
+            <div id="ranking">Ranking: 
+                <ol id="listranking"></ol>
+            </div>
+            <div id="settings">
+                <i class="fa-solid fa-gear fa-4x"></i>
+            </div>
+        </div>
+    </div>
+
+    <div id="custom_settings" class="custom_settings">
+        <div class="modal_settings">
+            <h2 id="player-name"></h2>
+            <div class="selectors">
+                <div class="selector_1">
+                    <label for='snake-colors' class="etiqueta">Snake color:</label>
+                    <div class="snake-color" id="custom_select">
+                        <select id="snake-colors" onchange="change_snake_color()">
+                            <option selected disabled hidden value="">Select color</option>
+                            <option value="green">Green</option>
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                        </select>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="selector_2">
+                    <label for='food-types' class="etiqueta">Food type:</label>
+                    <div class="food-type" id="custom_select">
+                        <select id="food-types" onchange="change_food_type()">
+                            <option selected disabled hidden value="">Select food</option>
+                            <option value="apple">Apple</option>
+                            <option value="pear">Pear</option>
+                            <option value="pineapple">Pineapple</option>
+                        </select>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="selector_3">
+                    <label for='board-colors' class="etiqueta">Board color:</label>
+                    <div class="board-color" id="custom_select">
+                        <select id="board-colors" onchange="change_board_color()">
+                            <option selected disabled hidden value="">Select board</option>
+                            <option value="#70DFD8">Cyan</option>
+                            <option value="#F4F9A2">Yellow</option>
+                            <option value="#F9A2E0">Pink</option>
+                        </select>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="selector_4">
+                    <label for='levels' class="etiqueta">Level:</label>
+                    <div class="level" id="custom_select">
+                        <select id="levels" onchange="change_level()">
+                            <option selected disabled hidden value="">Select level</option>
+                            <option value="1">Level 1</option>
+                            <option value="2">Level 2</option>
+                            <option value="3">Level 3</option>
+                        </select>
+                        <i></i>
+                    </div>
+                </div>
+            </div>
+            <div class="settings_buttons">
+                <button class="done" id="done">DONE</button>
+                <button class="home" id="home">HOME</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameOver" class="game-over">
+        <div class="modal">
+          <h2>GAME OVER!</h2>
+          <p>Oh no the snake died! 🐍😭</p>
+          <button class="reiniciar">RESTART</button>
+        </div>
+    </div>
+    
+    <audio src="music/gameover.mp3" class="sonido" id="sonido-game-over" preload="auto"></audio>
+    <audio src="music/food.mp3" class="sonido" id="sonido-food" preload="auto"></audio>
+    <audio src="music/wall.mp3" class="sonido" id="sonido-wall" preload="auto"></audio>
+    <audio src="music/move.mp3" class="sonido" id="sonido-move" preload="auto"></audio>
+    <audio src="music/music.mp3" class="sonido" id="sonido-musica-fondo" preload="auto" loop></audio>
+
+</body>
+<script src="js/snake.js"></script>
+</html>

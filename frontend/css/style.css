@@ -1,0 +1,176 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.home-page {
+    display: none;
+}
+
+.home-page.visible {
+    display: block;
+}
+
+.login, .logout {
+    display: none;
+    position: absolute;
+    text-align: center;
+    right: 5%;
+    top: 5%;
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    background-color: #333;
+    color: white;
+    z-index: 2;
+}
+
+.login.visible, .logout.visible {
+    display: block;
+}
+
+.login i, .logout i {
+    display: block;
+    margin: auto;
+    padding: 30px;
+}
+
+.bienvenida {
+    display: flex;
+    background-image: url("../img/fondo_def.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    font-family: 'Arcade Rounded';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1; 
+}
+
+.bienvenida-botones {
+    display: flex;
+}
+
+.bienvenida button {
+    padding: 10px;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 40%;
+    width: 300px;
+    border: 3px solid #333;
+} 
+
+button {
+    cursor: pointer;
+    background: white;
+    border: 0;
+    padding: 0; 
+    border-radius: 20px;
+    color: #333;  
+    font-family: 'Arcade Rounded';
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 1;
+    transition: 0.3s;
+}
+    
+button:hover, button:focus {
+    background-color: rgb(201, 194, 194);
+    outline: 0;
+}
+
+.informacion {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("../img/fondo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+}
+
+.informacion.visible {
+    display: flex;
+}
+
+#restart {
+    display: block;
+    width: 300px;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    margin-top: 42%;
+    border: 3px solid #333;
+    border-radius: 20px;
+}
+
+#restart:hover, #restart:focus {
+    background-color: rgb(201, 194, 194);
+    outline: 0;
+}
+
+.modal_2 {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    overflow-wrap: break-word;
+    text-align: justify;
+    width: 50%;
+    height: 400px;
+    padding: 0; 
+    margin: auto;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.modal_2 h2 {
+    color: black;
+    text-align: center;
+    font-family: 'Arcade Rounded';
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.modal_2 p {
+    margin-top: 10px;
+    font-size: 1.5em;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.modal_2 button {
+    align-content: center;
+    background: white;
+    padding: 10px;
+}
+
+.modal_2 .reiniciar {
+    align-content: center;
+    color: black;
+    background: white;
+    border: 0;
+    font-family: 'Arcade Rounded';
+    font-size: 18px;
+    margin-bottom: 25px;
+    border: 5px solid #333;
+    border-radius: 20px;
+    width: 300px;
+}
+
+.reiniciar:hover, .reiniciar:focus {
+    background-color: rgb(201, 194, 194);
+    outline: 0;
+}
