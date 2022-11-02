@@ -4,9 +4,6 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-// const cors_options = {
-//     origin: process.env.CORSURL || "http://localhost:4200"
-// };
 const PORT = process.env.PORT || 3000
 
 const app = express();
